@@ -36,7 +36,7 @@ else
 		exit 1
 	else
 		if cat /etc/passwd |grep -w $usuario > /dev/null; then
-			echo -ne "\n\033[1;32mNovo limite para o usuario \033[1;33m$usuario\033[1;37m: "; read sshnum
+			echo -ne "\n\033[1;32mNew limit for the user \033[1;33m$usuario\033[1;37m: "; read sshnum
 			if [[ -z $sshnum ]]
 			then
 				tput setaf 7 ; tput setab 1 ; tput bold ; echo "" ; echo "You entered an invalid number!" ; echo "" ; tput sgr0
@@ -56,14 +56,14 @@ else
 						sleep 1
 						mv /tmp/a /root/usuarios.db
 						echo $usuario $sshnum >> /root/usuarios.db
-						tput setaf 7 ; tput setab 4 ; tput bold ; echo "" ; echo "Limit applied to user $ user has been $sshnum " ; tput sgr0
+						tput setaf 7 ; tput setab 4 ; tput bold ; echo "" ; echo "Limit applied to user $usuario has been $sshnum " ; tput sgr0
 						sleep 2
 						exit
 					fi
 				fi
 			fi			
 		else
-			tput setaf 7 ; tput setab 1 ; tput bold ; echo "" ; echo "The user $user was not found" ; echo "" ; tput sgr0
+			tput setaf 7 ; tput setab 1 ; tput bold ; echo "" ; echo "The user $usuario was not found" ; echo "" ; tput sgr0
 			exit 1
 		fi
 	fi
