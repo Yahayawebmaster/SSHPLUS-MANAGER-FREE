@@ -7,10 +7,10 @@ fi
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-10s\n' "Add Host to Squid Proxy" ; tput sgr0
 if [ ! -f "$payload" ]
 then
-	tput setaf 7 ; tput setab 4 ; tput bold ; echo "" ; echo "$Payload file not found" ; tput sgr0
+	tput setaf 7 ; tput setab 4 ; tput bold ; echo "" ; echo "file $Payload not found" ; tput sgr0
 	exit 1
 else
-	tput setaf 2 ; tput bold ; echo ""; echo "Current domains $payload in the file:" ; tput sgr0
+	tput setaf 2 ; tput bold ; echo ""; echo "Current domains in the file $payload:" ; tput sgr0
 	tput setaf 3 ; tput bold ; echo "" ; cat $payload ; echo "" ; tput sgr0
 	read -p "Enter the domain you want to add to the list: " host
 	if [[ -z $host ]]
